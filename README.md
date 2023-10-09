@@ -54,3 +54,39 @@ To add a new cookie stand, fill in the location, minimum customers, maximum cust
 The application will display the details of the newly created cookie stand, including the JSON data, below the form.
 ### Contributing
 Contributions to this project are welcome! If you find any issues or have suggestions for improvements, please open an issue or create a pull request.
+
+
+# Lab 38: Cookie Stand Admin App Development
+## Tasks Completed Today:
+- Set up a Next.js project for the Cookie Stand Admin app.
+
+- Created a custom <Header> component for the app's header.
+
+- Developed the <CreateForm> component, which allows users to add new cookie stands with location and hourly sales data.
+
+- Implemented a function to handle the creation of new cookie stands and store them in a state array.
+
+- Designed a <Footer> component that displays the number of cookie stand locations worldwide based on the stored data.
+
+- Worked on styling the app using Tailwind CSS utility classes.
+
+- Created an <Overview> page to display an overview of the app.
+
+- Added navigation links between the main page and the overview page.
+
+- Set up an array to store data for cookie stands and used it to generate reports.
+
+- Developed the <ReportTable> component to display reports and calculate totals per hourly slot.
+
+## Challenges Faced:
+- Initially had issues with routing and linking between pages, but resolved them by adjusting the folder structure and using correct Link components.
+
+- Styling the components to match the provided spec required some time and experimentation with Tailwind CSS.
+
+## Visual
+![](./images/lab38.png)
+## Additional Notes:
+
+
+Used version control (e.g., Git) to track changes and collaborate on the project.
+

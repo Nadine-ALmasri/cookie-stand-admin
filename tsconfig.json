@@ -22,6 +22,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/pages/Footer.js", "src/app/pages/Header.js", "src/app/pages/CookieStandForm.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/pages/Footer.js", "src/app/pages/Header.js", "src/app/pages/CookieStandForm.js", "src/app/Overview/page.js"],
   "exclude": ["node_modules"]
 }
