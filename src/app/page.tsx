@@ -9,7 +9,7 @@ import CookieStandForm from './pages/CookieStandForm';
 export default function Home() {
  
  
-   // Initialize an array to store cookie stands
+   // Initialize an array to store cookie stands k
    const [cookieStands, setCookieStands] = useState([]);
 
    // Function to handle creating a new cookie stand
@@ -21,7 +21,9 @@ export default function Home() {
     <>
     
   <Header/>
+  
  <div>
+  
     <CookieStandForm onCookieStandCreate={handleCookieStandCreate} />
     <div className='text-white' >
          <h2>Cookie Stands</h2>
@@ -32,7 +34,8 @@ export default function Home() {
              </li>
            ))}
          </ul>
-       </div></div>
+       </div>
+       </div>
  <Footer/>
     </>
    );
