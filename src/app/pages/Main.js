@@ -3,37 +3,41 @@ import Footer from './Footer';
 import ReportTable from './ReportTable'
 import { useState } from 'react';
 import { timeSlots }  from './Data';
+import { useEffect } from 'react';
+import axios from 'axios';
+function Main() {
+    const [cookieStands, setCookieStands] = useState([]);
+    const [error, setError] = useState([]);
+  
+    const handleCookieStandCreate = (newCookieStand) => {
+      setCookieStands([...cookieStands, newCookieStand]);
+      fetchCookieStands(); // Fetch the data again after creating a new cookie stand
+    };
+  
+    const fetchCookieStands = () => {
+      const apiUrl = 'https://salamoncookies.azurewebsites.net/api/cookiestands';
+      
+      axios
+        .get(apiUrl)
+        .then((response) => {
+          setCookieStands(response.data);
+        })
+        .catch((error) => {
+          setError(error);
+        });
+    };
+  
+    useEffect(() => {
+      fetchCookieStands(); // Initial fetch
+    }, []);
 
-function Main (){
-     // Initialize an array to store cookie stands k
-  const [cookieStands, setCookieStands] = useState([]);
-
-  // Function to handle creating a new cookie stand
-  const handleCookieStandCreate = (newCookieStand) => {
-    // Add the new cookie stand to the array
-    setCookieStands([...cookieStands, newCookieStand]);
-  };
-    return(
-
-    <>
-<CreateForm  onCookieStandCreate={handleCookieStandCreate}/>
-<div>
-     
+    return (
+        <>
+          <CreateForm onCookieStandCreate={handleCookieStandCreate} />
+          <ReportTable hours={timeSlots} reports={cookieStands} fetchCookieStands={fetchCookieStands}/>
+          <Footer reports={cookieStands} />
+        </>
+      );
+    }
     
-     <div className='text-white' >
-          <h2>Cookie Stands</h2>
-          <ul >
-            {cookieStands.map((cookieStand, index) => (
-              <li key={index}>
-                Location: {cookieStand.location}, Min Customers: {cookieStand.minCustomers}, Max Customers: {cookieStand.maxCustomers}, Avg Cookies Per Sale: {cookieStand.avgCookiesPerSale}
-              </li>
-            ))}
-          </ul>
-        </div>
-        </div>
-        <ReportTable hours={timeSlots} reports={cookieStands} />
-        <Footer reports={cookieStands}/>
-</>
-    )
-}
-export default Main ;
+    export default Main;

@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import Overview from '../Overview/page' ;
+
 const Header = () => {
     return (
       <header className="bg-green-500 p-4 text-white flex justify-between item-center mb-4">
